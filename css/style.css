@@ -1,76 +1,73 @@
-.html {
-    font-family: Arial, Helvetica, sans-serif;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}   
+
+html {
+    font-family: Arial, Helvetica, sans-serif
     font-size: 100%;
 
 }
 
 body {
-    background-image: url(../img/coloresb.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    border: 40px;
-    border-radius: 20px;
-    padding: 5px;
     font-size: 1rem;
-    color: #ffffffff;
+    color: black;
+    background-color: #dbd4d4;
+    height: 800px;
     
 }
 
-header{
-    font-size: 3rem;
-    font-style: italic;
+h1{
+    font-size: 4rem;
     text-align: center;
+
 }
 p{
-    font-size: 1rem;
+    font-size: 2rem;
+    padding-bottom: 20px;
 
 }
-.content {
-    display: flex;
-    background-color: #cfc3c3;
-    padding: 30px;
-    border: 2px solid #333;
-    height: 600px;
-    width: 400;
-    gap: 20px;
+
+
+.palette{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50%;
+    margin: 40px auto;
+    padding-top: 10px;
     
 }
-.card{
-    flex: 1;
+
+.color{
+    width: 180px;
+    height: 100px;
+    background: rgba(18, 145, 235, 0.776);
     border-radius: 20px;
     cursor: pointer;
-    transition: flex .7s cubic-bezier(.25, 1, .5, 1);
 }
 
-.card:first-child {
-    background-color: #ff0000ce;
-    text-align: center;
-    align-content: center;
-    font-size: 2rem;
 
-
-}
-
-.card:nth-child(2) {
-    background-color: #1cbb34;
-    text-align: center;
-    align-content: center;
-    font-size: 2rem;
-    
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
 
 }
 
-.card:last-child {
-    background-color: #081ec1ce;
-    text-align: center;
-    align-content: center;
-    font-size: 2rem;
-    
-  
-}
-
-.card:hover {
-    flex: 4;
+button{
+    border: 10px;
+    border-radius: 3px;
+    background-color: #1bac44;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fbfeffe2;
+    font-size: 1rem;
 }
