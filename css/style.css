@@ -18,12 +18,38 @@ body {
     height: 800px;
     
 }
+/* Aqui empieza la modificación del diseño del header */
 
-h1{
-    font-size: 4rem;
-    text-align: center;
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff5309;
+    height: 170px;
+    padding: 40px;
+    position: relative;
+    margin-bottom: 20px;
 
 }
+
+.logo{
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    position:absolute;
+    left: 5px;
+
+}
+
+header h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 4rem;
+    text-align: center;
+    width: 100%;
+
+}
+
 p{
     font-size: 2rem;
     padding-bottom: 20px;
@@ -34,11 +60,10 @@ p{
 .palette{
     display: grid;
     grid-template-columns: repeat(3, 200px);
-    gap: 16px;
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 50%;
+    height: 500px;
     margin: 40px auto;
     padding-top: 10px;
     
@@ -46,7 +71,7 @@ p{
 
 .color{
     width: 180px;
-    height: 100px;
+    height: 150px;
     background: rgba(18, 145, 235, 0.776);
     border-radius: 20px;
     cursor: pointer;
@@ -64,7 +89,7 @@ p{
 
 button{
     border: 10px;
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: #1bac44;
     padding: 20px;
     margin-top: 20px;
