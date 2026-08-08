@@ -95,4 +95,5 @@ button{
     margin-top: 20px;
     color: #fbfeffe2;
     font-size: 1rem;
+    cursor: pointer;
 }
