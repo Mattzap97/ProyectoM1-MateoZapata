@@ -59,36 +59,47 @@ p{
 /* Diseño de palette para organizar las tarjetas de colores */
 .palette{
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(4, 200px);
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 500px;
+    height: 650px;
     margin: 40px auto;
     padding-top: 10px;
     
 }
 
-.color{
+.color-item{
     display: flex;
     flex-direction: column;
     font-weight: bold;
     justify-content: flex-end;
     align-items: center;
     width: 180px;
-    height: 150px;
-    background: rgba(46, 151, 227, 0.776);
+    height: 200px;
     border-radius: 20px;
     cursor: pointer;
 }
 
+.color{
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+}
+
+.name{
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+}
 
 
 .buttons{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     gap: 20px;
 
 }
