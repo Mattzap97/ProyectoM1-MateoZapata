@@ -1,3 +1,4 @@
+const colors = document.querySelectorAll(".color");
 const generateButton = document.getElementById("generate-btn");
 
 function generatePalette(){
@@ -6,11 +7,16 @@ function generatePalette(){
 
     return hexColor;
 }
-console.log(generatePalette());
+
 generateButton.addEventListener("click", function(){
+
     console.log("Botón presionado!");
+    colors.forEach(function(color) {
+    const newColor = generatePalette();
+    color.style.backgroundColor = newColor;
+
+    })    
 })
-    
 
 const copyButton = document.getElementById("copy-btn");
 function copyPalette(){
