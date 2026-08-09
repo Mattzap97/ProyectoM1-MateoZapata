@@ -69,32 +69,37 @@ p{
     
 }
 
+/*CONTENEDOR DE CADA COLOR CON SU RESPECTIVO NOMBRE*/
 .color-item{
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    justify-content: flex-end;
     align-items: center;
     width: 180px;
     height: 200px;
-    border-radius: 20px;
     cursor: pointer;
 }
 
+/*ESTILOS PARA CADA TARJETA DE COLOR*/
 .color{
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-radius: 12px;
+    transition: transform 0.3 ease, box-shadow 0.3 ease;
 }
 
+/*ESTILOS PARA EL CONTENEDOR DEL NOMBRE DE CADA COLOR*/
 .name{
     margin-top: 8px;
     width: 100%;
     text-align: center;
+    font-size: 1.15rem;
     background-color: #ffffff;
+    margin-top: 5px;
+    padding: 10px 0 10px 0;
 }
 
-
+/* ESTILOS PARA EL CONTENEDOR DE BOTONES*/
 .buttons{
     display: flex;
     justify-content: center;
@@ -104,13 +109,25 @@ p{
 
 }
 
+/*DEFINIR ESTILOS PARA LOS BOTONES*/
 button{
     border: 10px;
     border-radius: 10px;
-    background-color: #1bac44;
+    background-color: #13be35;
     padding: 20px;
     margin-top: 20px;
     color: #fbfeffe2;
     font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease
+
+}   
+
+.color:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+button:hover{
+    background-color: #24c408d0;
+    transform: scale(1.05);
 }

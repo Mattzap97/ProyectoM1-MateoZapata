@@ -14,16 +14,15 @@ function paintPalette() {
         const name = item.querySelector(".name");
         box.style.backgroundColor = newColor;
         name.textContent = newColor;
-
     })  
 }
-
-paintPalette();
 
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
 })
+
+paintPalette();
 
 
 const copyButton = document.getElementById("copy-btn");
