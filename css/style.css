@@ -110,7 +110,7 @@ p{
 }
 
 /* ESTILO PARA EL MENÚ SELECTOR DE CANTIDAD DE COLORES*/
-#color-count{
+#select{
     padding: 20px 15px 19px 18px;
     border-radius: 10px;
     margin-top: 20px;
@@ -120,8 +120,9 @@ p{
     cursor: pointer;
     transition: all 0.3s ease;
 
+}
 /*DEFINIR ESTILOS PARA LOS BOTONES*/
-button{
+button {
     border: 10px;
     border-radius: 10px;
     background-color: #13be35;
@@ -138,14 +139,18 @@ button{
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-button:hover{
+
+button:hover {
     background-color: #24c408d0;
     transform: scale(1.05);
+    
 }
 
-#color-count:hover{
+#select:hover{
     background-color: #24c408d0;
     transform: scale(1.05);
+
+}
 
 footer{
     background-color: #ff5309;
