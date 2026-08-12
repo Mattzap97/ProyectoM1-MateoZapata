@@ -63,10 +63,12 @@ p{
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 650px;
+    height: 800px;
     margin: 40px auto;
     padding-top: 10px;
+    padding-bottom: 50px;
     background-color: #318dd354;
+    
 }
 
 /*CONTENEDOR DE CADA COLOR CON SU RESPECTIVO NOMBRE*/
