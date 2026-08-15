@@ -1,6 +1,7 @@
 const colorItems = document.querySelectorAll(".color-item");
 const generateButton = document.getElementById("generate-btn");
 const select = document.getElementById("select")
+const formatOptions = document.querySelectorAll(`input[name = "grupo"]`)
 
 function generatePalette() {
     const randomColor = Math.floor(Math.random() * 16777216);
@@ -10,19 +11,95 @@ function generatePalette() {
 
 function paintPalette() {
     const quantity = Number(select.value);
+    const format = document.querySelector(`input[name="grupo"]:checked`).value;
     colorItems.forEach(function(item, index) {
+        
         if (index < quantity) {
             item.style.display = "block"
 
             const newColor = generatePalette();
             const box = item.querySelector(".color");
             const name = item.querySelector(".name");
+        
             box.style.backgroundColor = newColor;
-            name.textContent = newColor;
+            if (format === "HSL"){
+                name.textContent = hexToHSL(newColor);
+            } else {
+                name.textContent = newColor;
+            }
+            item.dataset.hex = newColor;
         } else {
             item.style.display = "none";
         }
     })  
+}
+
+
+formatOptions.forEach(function(option){
+    option.addEventListener("change", paintPalette);
+})
+
+
+function hexToHSL (hex) {
+    let r = parseInt(hex.substring(1, 3), 16) / 255;
+    let g = parseInt(hex.substring(3, 5), 16) / 255;
+    let b = parseInt(hex.substring(5, 7), 16) / 255;
+
+    const max = Math.max(r ,g, b);
+    const min = Math.min(r, g, b);
+
+    let h;
+    let s;
+    let l = (max - min) / 2;
+
+    if (max === min){
+        h = 0;
+        s = 0;
+
+    } else {
+        const difference = max -min;
+
+        s = l > 0.5
+            ? difference / (2 - max - min)
+            : difference / (max + min);
+
+        switch (max) {
+
+            case r:
+                h = (g - b) / difference + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / difference + 2;
+                break;
+            case b:
+                h = (r - g) / difference + 4;
+                break
+        }
+        h = h / 6;
+    }
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    l = Math.round(l * 100);
+
+    return `hsl(${h}, ${s}, ${l}%)`;
+}
+
+function updateFormat() {
+    const selectedformat = document.querySelector(`input[name="grupo"]:checked`);
+    const format = selectedformat.value;
+    colorItems.forEach(function(item) {
+        const name = item.querySelector(".name");
+        const hex = item.dataset.hex;
+
+        if(!hex) {
+            return;
+        }
+        if (format === "HEX") {
+            name.textContent = hex;
+        } else if (format === "HSL") {
+            name.textContent = hexToHSL(hex);
+        }
+    })
 }
 
 generateButton.addEventListener("click", function() {
@@ -33,6 +110,9 @@ paintPalette();
 
 select.addEventListener("change", paintPalette)
 
+formatOptions.forEach(function(option) {
+        option.addEventListener("change", updateFormat);
+})
 
 
 
