@@ -100,15 +100,19 @@ function updateFormat() {
 }
 
 
-
-
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
 })
 paintPalette();
 
+formatOptions.forEach(function(option){
+    option.addEventListener("change", function() {
+        paintPalette();
+        updateFormat();
 
+    })
+})
 
 select.addEventListener("change", paintPalette)
 
