@@ -3,12 +3,14 @@ const generateButton = document.getElementById("generate-btn");
 const select = document.getElementById("select")
 const formatOptions = document.querySelectorAll(`input[name = "grupo"]`)
 
+//FUNCIÓN QUE GENERA UN NUEVO COLOR HEX//
 function generatePalette() {
     const randomColor = Math.floor(Math.random() * 16777216);
     const hexColor = "#" + randomColor.toString(16).padStart(6, "0");
     return hexColor;
 }
 
+//FUNCIÓN QUE GENERA Y PINTA UNA NUEVA PALETA//
 function paintPalette() {
     const quantity = Number(select.value);
     const format = document.querySelector(`input[name="grupo"]:checked`).value;
@@ -108,7 +110,6 @@ paintPalette();
 
 formatOptions.forEach(function(option){
     option.addEventListener("change", function() {
-        paintPalette();
         updateFormat();
 
     })
