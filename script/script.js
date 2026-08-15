@@ -36,6 +36,7 @@ select.addEventListener("change", paintPalette)
 
 
 
+
 const copyButton = document.getElementById("copy-btn");
 function copyPalette(){
     console.log("Copiar activo!");
