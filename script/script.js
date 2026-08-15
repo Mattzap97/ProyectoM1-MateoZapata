@@ -34,12 +34,7 @@ function paintPalette() {
     })  
 }
 
-
-formatOptions.forEach(function(option){
-    option.addEventListener("change", paintPalette);
-})
-
-
+/*FUNCIÓN QUE TRANSFORMA FORMATO HEX A HSL*/
 function hexToHSL (hex) {
     let r = parseInt(hex.substring(1, 3), 16) / 255;
     let g = parseInt(hex.substring(3, 5), 16) / 255;
@@ -84,6 +79,8 @@ function hexToHSL (hex) {
     return `hsl(${h}, ${s}, ${l}%)`;
 }
 
+/*FUNCIÓN CON LA LÓGICA QUE PERMITE ACTUALIZAR EL FORMATO
+DE COLORES DEPENDIENDO DE LA ELECCIÓN DEL USUARIO*/
 function updateFormat() {
     const selectedformat = document.querySelector(`input[name="grupo"]:checked`);
     const format = selectedformat.value;
@@ -102,17 +99,20 @@ function updateFormat() {
     })
 }
 
+
+
+
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
 })
 paintPalette();
 
+
+
 select.addEventListener("change", paintPalette)
 
-formatOptions.forEach(function(option) {
-        option.addEventListener("change", updateFormat);
-})
+
 
 
 
