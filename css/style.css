@@ -13,8 +13,8 @@ html {
 
 body {
     font-size: 1rem;
-    color: black;
-    background-color: #b7b1b1b9;
+    color: white;
+    background-color: #000000;
     height: 800px;
     
 }
@@ -49,25 +49,33 @@ header h1 {
     width: 100%;
 
 }
-
-p{
+/*DISEÑO PARA TEXTO DESPUES DEL HEADER*/
+main h2{
     font-size: 2rem;
     padding-bottom: 20px;
 
 }
 
+main p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
 /* Diseño de palette para organizar las tarjetas de colores */
 .palette{
     display: grid;
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(9, 153px);
     justify-content: center;
     align-items: center;
-    width: 97%;
-    height: 800px;
+    width: 100%;
+    height: 350px;
     margin: 40px auto;
     padding-top: 10px;
-    padding-bottom: 50px;
-    background-color: #318dd354;
+    padding-bottom: 150px;
+    padding-left: 10px;
+    background-color: hsla(221, 62%, 43%, 0.162);
     
 }
 
@@ -75,9 +83,10 @@ p{
 .color-item{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 200px;
+    width: 140px;
+    height: 100px;
     cursor: pointer;
 }
 
@@ -94,7 +103,8 @@ p{
     margin-top: 8px;
     width: 100%;
     text-align: center;
-    font-size: 1.15rem;
+    color: #000000;
+    font-size: 1.05rem;
     font-weight: bold;
     background-color: #ffffff;
     margin-top: 5px;
@@ -156,8 +166,23 @@ button:hover {
 
 footer{
     background-color: #ff5309;
-    height: 100px;
+    height: 140px;
     width: 100%;
     margin-top: 80px;
-    padding: 20px 5px 10px 5px;
+    padding: 20px 5px 10px 0px;
 }
+
+.footer-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
