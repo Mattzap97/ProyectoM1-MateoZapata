@@ -101,13 +101,15 @@ function updateFormat() {
     })
 }
 
-
+//EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
 })
 paintPalette();
 
+
+//EVENTO QUE CAMBIA EL FORMATO DE COLORES HEX A HSL//
 formatOptions.forEach(function(option){
     option.addEventListener("change", function() {
         updateFormat();
@@ -115,14 +117,36 @@ formatOptions.forEach(function(option){
     })
 })
 
+
+//EVENTO QUE PERMITE ELEGIR EL NUMERO DE COLORES DE ACUERDO A GUSTO DEL USUARIO//
 select.addEventListener("change", paintPalette)
 
 
+//FUNCIÓN QUE PERMITE GUARDAR LA PALETA GENERADA USANDO localStorage//
+function savePalette() {
 
+    const savedColors = [];
+    colorItems.forEach(function(item) {
+        if (item.style.display !== "none") {
+            savedColors.push(item.dataset.hex);
+        }
+    })
 
+    const format = document.querySelector(`input[name="grupo"]:checked`).value;
+    const palette = {
+        colors: savedColors,
+        format: format
+    }
 
-const copyButton = document.getElementById("copy-btn");
-function copyPalette(){
-    console.log("Copiar activo!");
+    localStorage.setItem("PaletaGuardada", JSON.stringify(palette));
+    console.log("Copiar Activo!");
+    console.log(localStorage.getItem("PaletaGuardada"));    
 }
-copyButton.addEventListener("click", copyPalette);
+
+
+//DEFINIR EVENTO AL DAR CLICK AL BOTON COPIAR//
+const copyButton = document.getElementById("copy-btn");
+copyButton.addEventListener("click", function() {
+    
+    savePalette();
+})
