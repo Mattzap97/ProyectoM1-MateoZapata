@@ -78,7 +78,7 @@ function hexToHSL (hex) {
     s = Math.round(s * 100);
     l = Math.round(l * 100);
 
-    return `hsl(${h}, ${s}, ${l}%)`;
+    return `HSL(${h}, ${s}, ${l}%)`;
 }
 
 /*FUNCIÓN CON LA LÓGICA QUE PERMITE ACTUALIZAR EL FORMATO
