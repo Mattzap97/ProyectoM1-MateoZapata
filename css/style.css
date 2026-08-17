@@ -75,19 +75,31 @@ header h1 {
     justify-content: space-evenly;
     align-items: center;
     background-color: #e24e1c;
+    width: 100%;
     list-style: none;
+    padding-inline-end: 60px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     
 }
 
 /*ESTILOS Y FORMATO DEFINIDO PARA EL CONTENIDO DE LA BARRA DE NAVEGACIÓN*/
-.Navigation li{
+nav li a {
     font-size: 1.5rem;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-inline-end: 50px;
-    
+    text-decoration: none;
+    list-style: none;
+    color: #ffffff;
+/*DEFINE PARÁMETROS PARA DAR EFECTO EN HOVER*/    
+    border: 1px solid transparent;
+    transition: all 0.3 ease;
+    display: inline-block;
 }
 
+nav li a:hover{  
+    border: 1px solid #e0e0e0;
+    background-color: rgba(0, 0, 0, 0.25);
+
+}
 
 /*DISEÑO PARA TEXTO DESPUES DEL HEADER*/
 main h2{
@@ -225,6 +237,7 @@ footer{
 }
 
 .contact{
+    list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -232,3 +245,10 @@ footer{
     padding: 20px 280px 10px 0px;
 }
 
+section div h3 {
+    font-size: 1.3rem;
+}
+section div a{
+    text-decoration: none;
+    color: #ffffff;
+}

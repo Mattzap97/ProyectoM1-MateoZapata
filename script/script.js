@@ -3,6 +3,8 @@ const generateButton = document.getElementById("generate-btn");
 const select = document.getElementById("select")
 const formatOptions = document.querySelectorAll(`input[name = "grupo"]`)
 
+const savedPalette = document.getElementById("saved-palette-container");
+
 //FUNCIÓN QUE GENERA UN NUEVO COLOR HEX//
 function generatePalette() {
     const randomColor = Math.floor(Math.random() * 16777216);
@@ -149,4 +151,34 @@ const copyButton = document.getElementById("copy-btn");
 copyButton.addEventListener("click", function() {
     
     savePalette();
+    showSavedPalette();
 })
+
+
+//FUNCIÓN QUE MUESTRA AL USUARIO LA PALETA GUARDADA EN LOCAL STORAGE//
+function showSavedPalette() {
+    const savedData = localStorage.getItem("PaletaGuardada");
+
+    if (!savedData) {
+        return;
+    }
+    const palettes = JSON.parse(savedData);  //JSON.parse permite transformar el texto en objetos//
+    palettes.colors.forEach(function(color) {
+        const colorItem = document.createElement("div");
+        colorItem.classList.add("saved-color-item");
+        colorItem.style.backgroundColor = color;
+
+        let colorText;
+        if (palettes.format === "HSL") {
+            colorText = hexToHSL(color);
+        } else {
+            colorText = color;
+        }
+        colorItem.textContent = colorText;
+
+        savedPalette.appendChild(colorItem); 
+
+
+        console.log("Paleta recuperada", palettes);
+    })
+}
