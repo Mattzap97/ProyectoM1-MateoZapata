@@ -127,7 +127,7 @@ select.addEventListener("change", paintPalette)
 //FUNCIÓN QUE PERMITE GUARDAR LA PALETA GENERADA USANDO localStorage//
 function savePalette() {
 
-    const savedColors = [];
+    const savedColors = [];//Establecer un array vacío mediante corchetes para dentro agregar la información de la paleta guardada//
     colorItems.forEach(function(item) {
         if (item.style.display !== "none") {
             savedColors.push(item.dataset.hex);
@@ -157,26 +157,26 @@ copyButton.addEventListener("click", function() {
 
 //FUNCIÓN QUE MUESTRA AL USUARIO LA PALETA GUARDADA EN LOCAL STORAGE//
 function showSavedPalette() {
-    const savedData = localStorage.getItem("PaletaGuardada");
+    const savedData = localStorage.getItem("PaletaGuardada");//Recuperar la paleta guardada en localStorage//
 
     if (!savedData) {
         return;
     }
     const palettes = JSON.parse(savedData);  //JSON.parse permite transformar el texto en objetos//
-    palettes.colors.forEach(function(color) {
-        const colorItem = document.createElement("div");
-        colorItem.classList.add("saved-color-item");
-        colorItem.style.backgroundColor = color;
+    palettes.colors.forEach(function(color) { //Acceder a los colores y con el forEach recorrer cada color//
+        const colorItem = document.createElement("div");//Crear elementos HTML desde JavaScript//
+        colorItem.classList.add("saved-color-item");//Asignar una clase CSS al elemento HTML creado desde JavaScript//
+        colorItem.style.backgroundColor = color;//Permite pintar cada color//
 
         let colorText;
-        if (palettes.format === "HSL") {
-            colorText = hexToHSL(color);
+        if (palettes.format === "HSL") { //Condición que establece si el formato de colores es HSL, se muestra aquel formato sin realizar
+            colorText = hexToHSL(color); //otra conversión; caso contrario devuelve la información en formato HEX
         } else {
             colorText = color;
         }
         colorItem.textContent = colorText;
 
-        savedPalette.appendChild(colorItem); 
+        savedPalette.appendChild(colorItem); //appendChild nos permite insertar los colores en la página//
 
 
         console.log("Paleta recuperada", palettes);
