@@ -28,7 +28,7 @@ header{
     height: 170px;
     padding: 40px;
     position: relative;
-    margin-bottom: 20px;
+
 
 }
 
@@ -67,6 +67,27 @@ header h1 {
     font-style: italic;
 
 }
+
+/*ESTILO PARA BARRA DE NAVEGACIÓN*/
+.Navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e24e1c;
+    list-style: none;
+    
+}
+
+/*ESTILOS Y FORMATO DEFINIDO PARA EL CONTENIDO DE LA BARRA DE NAVEGACIÓN*/
+.Navigation li{
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-inline-end: 50px;
+    
+}
+
 
 /*DISEÑO PARA TEXTO DESPUES DEL HEADER*/
 main h2{
