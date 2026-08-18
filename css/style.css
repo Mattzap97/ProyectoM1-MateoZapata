@@ -311,7 +311,7 @@ section div a{
     .logo{
         width: 160px;
         height: 140px;
-        position: fixed;
+    
     
     }
     .Navigation{
@@ -347,13 +347,14 @@ section div a{
         display: flex;
         flex-direction: row;
         gap: 10px;
-        width: 100px;
+        width: 100%;
+        margin-top: 23px;
         padding: 0 20px;
     }
     button, #select{
         width: 100%;
         padding: 14px;
-        font-size: 16px;
+        font-size: 1rem;
     }
     .saved-palette{
         width: 95%;
@@ -365,12 +366,14 @@ section div a{
     }
     footer{
         padding: 30px 15px;
+        width: 100%;
         text-align: center;
     }
     .footer-items{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        font-size: 0.80rem;
 
     }
 }
