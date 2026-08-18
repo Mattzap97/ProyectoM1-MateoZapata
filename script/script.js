@@ -110,6 +110,7 @@ function getColorInfo(item) {
     const colorInfo = name.textContent;//Obtiene el texto que actualmente está mostrando la página//
 
     navigator.clipboard.writeText(colorInfo);
+    showCopiedMessage(colorInfo);
 
     console.log("Color copiado", colorInfo);
 }
@@ -121,6 +122,29 @@ colorItems.forEach(function(item) {
         getColorInfo(item);
     })
 })
+
+
+//FUNCIÓN QUE MUESTRA EN PANTALLA UN MENSAJE DEL COLOR COPIADO EN LA PALETA//
+function showCopiedMessage(colorInfo) {
+    const message = document.createElement("div");
+    message.textContent = "Color Copiado!";
+
+    document.body.appendChild(message);
+
+    message.style.position = "fixed";
+    message.style.top = "20px";
+    message.style.right = "20px";
+    message.style.background = "white";
+    message.style.color = "black";
+    message.style.padding = "10px";
+    message.style.zIndex = "9999";
+
+    console.log("Mensaje creado:", message)
+
+    setTimeout(function() {
+        message.remove();
+    }, 2000);
+}
 
 
 
