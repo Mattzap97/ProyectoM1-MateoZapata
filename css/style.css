@@ -118,7 +118,7 @@ main h2{
 /* DISEÑO Y FORMATO DEL CONTENEDOR DE OPCIONES INPUT*/
 .format{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 8px;
 }
 
 .format p{
@@ -137,7 +137,7 @@ main h2{
 /*DISEÑO DE PALETTE PARA ORGANIZAR LAS PALETAS DE COLORES*/
 .palette{
     display: grid;
-    grid-template-columns: repeat(9, 148px);
+    grid-template-columns: repeat(9, 143px);
     justify-content: center;
     align-items: center;
     width: 100%;

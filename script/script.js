@@ -103,6 +103,27 @@ function updateFormat() {
     })
 }
 
+
+//FUNCIÓN QUE PERMITE AL USUARIO COPIAR EL COLOR SELECCIONADO DENTRO DE LA PALETA//
+function getColorInfo(item) {
+    const name = item.querySelector(".name");//Busca el elemento donde actualmente se obtenga la información//
+    const colorInfo = name.textContent;//Obtiene el texto que actualmente está mostrando la página//
+
+    navigator.clipboard.writeText(colorInfo);
+
+    console.log("Color copiado", colorInfo);
+}
+
+/*EVENTO QUE RECORRE TODO EL COLOR ITEM Y GENERA EL EVENTO
+DE COPIAR EL NOMBRE DEL COLOR SELECCIONADO*/
+colorItems.forEach(function(item) {
+    item.addEventListener("click", function(){
+        getColorInfo(item);
+    })
+})
+
+
+
 //EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
