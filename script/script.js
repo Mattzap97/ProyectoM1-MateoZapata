@@ -146,15 +146,6 @@ function savePalette() {
 }
 
 
-//DEFINIR EVENTO AL DAR CLICK AL BOTON COPIAR//
-const copyButton = document.getElementById("copy-btn");
-copyButton.addEventListener("click", function() {
-    
-    savePalette();
-    showSavedPalette();
-})
-
-
 //FUNCIÓN QUE MUESTRA AL USUARIO LA PALETA GUARDADA EN LOCAL STORAGE//
 function showSavedPalette() {
     const savedData = localStorage.getItem("PaletaGuardada");//Recuperar la paleta guardada en localStorage//
@@ -182,3 +173,11 @@ function showSavedPalette() {
         console.log("Paleta recuperada", palettes);
     })
 }
+
+//DEFINIR EVENTO AL DAR CLICK AL BOTON GUARDAR PALETA//
+const copyButton = document.getElementById("copy-btn");
+copyButton.addEventListener("click", function() {
+    
+    savePalette();
+    showSavedPalette();
+})
