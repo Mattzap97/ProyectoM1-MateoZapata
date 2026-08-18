@@ -127,17 +127,10 @@ colorItems.forEach(function(item) {
 //FUNCIÓN QUE MUESTRA EN PANTALLA UN MENSAJE DEL COLOR COPIADO EN LA PALETA//
 function showCopiedMessage(colorInfo) {
     const message = document.createElement("div");
-    message.textContent = "Color Copiado!";
+    message.classList.add("copied-message");
+    message.textContent = "Color Copiado ✔";
 
     document.body.appendChild(message);
-
-    message.style.position = "fixed";
-    message.style.top = "20px";
-    message.style.right = "20px";
-    message.style.background = "white";
-    message.style.color = "black";
-    message.style.padding = "10px";
-    message.style.zIndex = "9999";
 
     console.log("Mensaje creado:", message)
 

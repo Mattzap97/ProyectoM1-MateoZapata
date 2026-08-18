@@ -286,6 +286,18 @@ section div a{
 }
 
 
+.copied-message{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(220, 5%, 88%, 100%);
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 999;
+}
+
 @media (max-width: 768px) {
     body{
         height: 100%;
