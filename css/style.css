@@ -140,7 +140,7 @@ main h2{
     grid-template-columns: repeat(9, 148px);
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
     height: 470px;
     margin: 10px auto;
     padding-top: 10px;
@@ -292,6 +292,7 @@ section div a{
         width: 100%;
         padding: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
         
     }
     header, .presentation{
@@ -327,18 +328,20 @@ section div a{
     .palette {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        justify-content: center;
+        gap: 5px;
+        justify-content: space-evenly;
         width: 100%;
-        padding: 10px;
+        padding-bottom: 70px;
+        height: 700px;
     }
     
     .color {
-        width: 100%;
-        height: 110px;
+        width: 140px;
+        height: 130px;
     }
     .name{
-        width: 100%;
+        width: 140px;
+        font-size: 1rem;
     }
     .buttons{
         display: flex;
