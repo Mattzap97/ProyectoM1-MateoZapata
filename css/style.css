@@ -118,6 +118,7 @@ main h2{
 /* DISEÑO Y FORMATO DEL CONTENEDOR DE OPCIONES INPUT*/
 .format{
     text-align: center;
+    padding-top: 20px;
 }
 
 .format p{
