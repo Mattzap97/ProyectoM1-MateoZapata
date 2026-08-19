@@ -383,6 +383,11 @@ footer section p{
     #saved-palette-container{
         display: flex;
         height: 60px;
+        width:100%;
+    }
+    .saved-color-item{
+        width: 25px;
+        
     }
     footer{
         padding: 30px 15px;
