@@ -103,6 +103,14 @@ function updateFormat() {
     })
 }
 
+//EVENTO QUE CAMBIA EL FORMATO DE COLORES HEX A HSL//
+formatOptions.forEach(function(option){
+    option.addEventListener("change", function() {
+        updateFormat();
+
+    })
+})
+
 
 //FUNCIÓN QUE PERMITE AL USUARIO COPIAR EL COLOR SELECCIONADO DENTRO DE LA PALETA//
 function getColorInfo(item) {
@@ -110,7 +118,7 @@ function getColorInfo(item) {
     const colorInfo = name.textContent;//Obtiene el texto que actualmente está mostrando la página//
 
     navigator.clipboard.writeText(colorInfo);
-    showCopiedMessage(colorInfo);
+    showCopiedMessage(colorInfo);//Usar la función que muestra al usuario el nombre del color copiado//
 
     console.log("Color copiado", colorInfo);
 }
@@ -140,22 +148,12 @@ function showCopiedMessage(colorInfo) {
 }
 
 
-
 //EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
 })
 paintPalette();
-
-
-//EVENTO QUE CAMBIA EL FORMATO DE COLORES HEX A HSL//
-formatOptions.forEach(function(option){
-    option.addEventListener("change", function() {
-        updateFormat();
-
-    })
-})
 
 
 //EVENTO QUE PERMITE ELEGIR EL NUMERO DE COLORES DE ACUERDO A GUSTO DEL USUARIO//

@@ -347,20 +347,21 @@ footer section p{
     .palette {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-        justify-content: space-evenly;
+        gap: 4px;
         width: 100%;
         padding-bottom: 70px;
         height: 700px;
+        padding-right: 15px;
     }
     
     .color {
-        width: 140px;
+        width: 135px;
         height: 130px;
     }
     .name{
-        width: 140px;
+        width: 135px;
         font-size: 1rem;
+        
     }
     .buttons{
         display: flex;
@@ -373,7 +374,7 @@ footer section p{
     button, #select{
         width: 100%;
         padding: 14px;
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     .saved-palette{
         width: 95%;
