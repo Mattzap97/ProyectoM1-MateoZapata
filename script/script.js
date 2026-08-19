@@ -148,10 +148,24 @@ function showCopiedMessage(colorInfo) {
 }
 
 
+function showGeneratedMessage () {
+    const message = document.createElement("div");
+    message.classList.add("copied-message");
+    message.textContent = "Nueva paleta generada 🎨";
+
+    document.body.appendChild(message);
+
+    setTimeout(function(){
+        message.remove();
+    }, 2000)
+
+}
+
 //EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
 generateButton.addEventListener("click", function() {
     console.log("Botón presionado!");
     paintPalette();
+    showGeneratedMessage()
 })
 paintPalette();
 
