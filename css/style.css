@@ -397,8 +397,20 @@ footer section p{
     .footer-items{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
+        gap: 10px;
         font-size: 0.85rem;
+
+    }
+    .contact{
+        padding: 0;
+        order: 1;
+    }
+    section div a{
+        padding-top: -10px;
+    }
+    footer section p{
+        order: 2;
 
     }
 }
