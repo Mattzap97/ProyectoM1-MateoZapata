@@ -38,6 +38,21 @@ function paintPalette() {
     })  
 }
 
+
+//EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
+generateButton.addEventListener("click", function() {
+    console.log("Botón presionado!");
+    paintPalette();
+    showGeneratedMessage()
+})
+paintPalette();
+
+
+//EVENTO QUE PERMITE ELEGIR EL NUMERO DE COLORES DE ACUERDO A GUSTO DEL USUARIO//
+select.addEventListener("change", paintPalette)
+
+
+
 /*FUNCIÓN QUE TRANSFORMA FORMATO HEX A HSL*/
 function hexToHSL (hex) {
     let r = parseInt(hex.substring(1, 3), 16) / 255;
@@ -147,7 +162,7 @@ function showCopiedMessage(colorInfo) {
     }, 2000);
 }
 
-
+//FUNCIÓN QUE MUESTRA EN PANTALLA UN MENSAJE AL MOMENTO DE GENERAR UNA NUEVA PALETA//
 function showGeneratedMessage () {
     const message = document.createElement("div");
     message.classList.add("copied-message");
@@ -160,18 +175,6 @@ function showGeneratedMessage () {
     }, 2000)
 
 }
-
-//EVENTO QUE GENERA NUEVOS COLORES AL DAR CLICK A GENERAR PALETA//
-generateButton.addEventListener("click", function() {
-    console.log("Botón presionado!");
-    paintPalette();
-    showGeneratedMessage()
-})
-paintPalette();
-
-
-//EVENTO QUE PERMITE ELEGIR EL NUMERO DE COLORES DE ACUERDO A GUSTO DEL USUARIO//
-select.addEventListener("change", paintPalette)
 
 
 //FUNCIÓN QUE PERMITE GUARDAR LA PALETA GENERADA USANDO localStorage//
@@ -218,11 +221,14 @@ function showSavedPalette() {
         colorItem.textContent = colorText;
 
         savedPalette.appendChild(colorItem); //appendChild nos permite insertar los colores en la página//
+        
 
 
         console.log("Paleta recuperada", palettes);
+        
     })
 }
+
 
 //DEFINIR EVENTO AL DAR CLICK AL BOTON GUARDAR PALETA//
 const copyButton = document.getElementById("copy-btn");

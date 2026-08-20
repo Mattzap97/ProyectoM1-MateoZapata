@@ -137,7 +137,7 @@ main h2{
 /*DISEÑO DE PALETTE PARA ORGANIZAR LAS PALETAS DE COLORES*/
 .palette{
     display: grid;
-    grid-template-columns: repeat(9, 143px);
+    grid-template-columns: repeat(9, 147px);
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -246,6 +246,12 @@ button:hover {
     gap: 2px;
 }
 
+.saved-palette h2{
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
 .saved-color-item{
     flex: 1;
 
@@ -293,6 +299,7 @@ footer section p{
     font-size: 0.98rem;
 }
 
+/*ESTILO PARA EL MENSAJE DE MICRO FEEDBACK PARA EL USUARIO*/
 .copied-message{
     position: fixed;
     bottom: 20px;
@@ -305,6 +312,8 @@ footer section p{
     z-index: 999;
 }
 
+
+/*MEDIA QUERY RESPONSIVE PARA PANTALLAS PEQUEÑAS EN CELULARES*/
 @media (max-width: 768px) {
     body{
         height: 100%;
@@ -337,12 +346,16 @@ footer section p{
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-around;
         gap: 20px;
         width: 100%;
-        padding-inline-start: 2px;
+        padding-inline-start: 10px;
     }
     nav li a{
-        font-size: 1.12rem;
+        font-size: 1.10rem;
+    }
+    main h2{
+        font-size: 1.5rem;
     }
     .palette {
         display: grid;
