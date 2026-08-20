@@ -132,4 +132,4 @@ Durante el desarrollo de la página web se usaron ChatGpt, Claude y Gemini como 
 
 Estas aplicaciones brindaron asistencia para realizar una mejor estructura en HTML, corregir y mejorar estilos ya establecidos en CSS; y añadir nuevo conocimiento para mejorar la lógica y manipulación de eventos en JavaScript sin necesidad de romper la funcionalidad total de la página.  
 
-Los prompts utilizados y la evidencia visual de como la inteligencia artificial influyó para el desarrollo de este proyecto están documentados en 
+Los prompts utilizados y la evidencia visual de como la inteligencia artificial influyó para el desarrollo de este proyecto están documentados en [PROMPTS.md](PROMPTS.md).
