@@ -82,7 +82,7 @@ Cómo evitar que se genere otra paleta de colores al momento de cambiar de forma
 </p>  
 
 La respuesta a esta consulta pudo permitir que la paleta de colores sea la misma cuando el usuario pase del formato HEX a HSL y no se genere una nueva paleta aleatoria al momento de cambiar de formato.  
-Esto permite mejor interactividad y que el usuario no pierda los colores generados y pueda obtener la información en ambos formatos.  
+Esto permite mejor interactividad y que el usuario no pierda los colores generados y pueda obtener su información en ambos formatos.  
 
 ## Prompt:  
 
@@ -101,7 +101,7 @@ Pedí a la Inteligencia Artificial que me ayude con un punto de partida para pod
     <img src="./assets/1787206941528.jpg" width="20%" hspace="20" alt="novena captura">
 </p>  
 
-La respuesta de la inteligencia artificial me ayudó a comprender que más que una herramienta de trabajo, se convirtió en un asistente de aprendizaje que pudo ayudar paso a paso explicándo en terminos simples como usar local storage sin romper ni modificar nada de mi código actual.  
+La respuesta de la inteligencia artificial  ayudó a comprender que más que una herramienta de trabajo, se convirtió en un asistente de aprendizaje que pudo ayudar paso a paso explicándo en terminos simples como usar local storage sin necesidad de romper ni modificar nada del código actual.  
 Gracias a esto se puede comprobar en consola un conjunto de arrays que contienen los colores guardados de la paleta generada especificando su información y el formato HEX o HSL previamente seleccionado.  
 
 ## Prompt:  
