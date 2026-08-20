@@ -232,18 +232,38 @@ button:hover {
     transform: scale(1.05);
 }
 
+
 .saved-palette{
-    height: 400px;
+    min-height: 400px;
+    height: auto;
     width: 700px;
 }
-/*DISEÑO DEL CONTENEDOR QUE MUESTRA LAS PALETAS GUARDADAS*/
+/*DISEÑO DEL CONTENEDOR GENERAL QUE MUESTRA UNA MINIATURA DE LAS PALETAS GUARDADAS*/
 #saved-palette-container{
     display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    gap: 20px;
+}
+
+/*  DISEÑO QUE CONTIENE CADA NUEVA PALETA GUARDADA POR EL USUARIO*/
+.saved-palette-item{
+    display: flex;
+    flex-direction: row;
     width: 600px;
     height: 100px;
     border-radius: 9px;
     overflow: hidden;
-    gap: 2px;
+    gap: 0;
+    flex-shrink: 0;
+}
+
+/*DISEÑO Y FORMATO DE CADA COLOR DENTRO DE LA PALETA GUARDADA*/
+.saved-color-item{
+    flex: 1;
+    height: 100%;
+
 }
 
 .saved-palette h2{
@@ -252,10 +272,7 @@ button:hover {
     padding-bottom: 10px;
 }
 
-.saved-color-item{
-    flex: 1;
 
-}
 
 /*AQUÍ EMPIEZA EL DISEÑO DEL FOOTER Y SU CONTENIDO*/
 footer{
@@ -311,6 +328,10 @@ footer section p{
     border-radius: 8px;
     z-index: 999;
 }
+
+
+
+
 
 
 /*MEDIA QUERY RESPONSIVE PARA PANTALLAS PEQUEÑAS EN CELULARES*/

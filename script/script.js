@@ -147,6 +147,75 @@ colorItems.forEach(function(item) {
 })
 
 
+
+//FUNCIÓN QUE PERMITE GUARDAR LA PALETA GENERADA USANDO localStorage//
+function savePalette() {
+
+    const savedColors = [];//Establecer un array vacío mediante corchetes para dentro agregar la información de la paleta guardada//
+    colorItems.forEach(function(item) {
+        if (item.style.display !== "none") {
+            savedColors.push(item.dataset.hex);
+        }
+    })
+
+    const format = document.querySelector(`input[name="grupo"]:checked`).value;
+    const palette = {
+        colors: savedColors,
+        format: format
+    }
+
+    localStorage.setItem("PaletaGuardada", JSON.stringify(palette));
+
+    showSavedPaletteMessage();
+    console.log("Copiar Activo!");
+    console.log(localStorage.getItem("PaletaGuardada"));    
+}
+
+
+//FUNCIÓN QUE MUESTRA AL USUARIO LA PALETA GUARDADA EN LOCAL STORAGE//
+function showSavedPalette() {
+    const savedData = localStorage.getItem("PaletaGuardada");//Recuperar la paleta guardada en localStorage//
+
+    if (!savedData) {
+        return;
+    }
+    const palettes = JSON.parse(savedData);  //JSON.parse permite transformar el texto en objetos//
+    
+
+    const newSavedPalette = document.createElement("div");
+    newSavedPalette.classList.add("saved-palette-item");
+    savedPalette.appendChild(newSavedPalette);
+
+    
+
+    palettes.colors.forEach(function(color) { //Acceder a los colores y con el forEach recorrer cada color//
+        const colorItem = document.createElement("div");//Crear elementos HTML desde JavaScript//
+        colorItem.classList.add("saved-color-item");//Asignar una clase CSS al elemento HTML creado desde JavaScript//
+        colorItem.style.backgroundColor = color;//Permite pintar cada color//
+
+
+        newSavedPalette.appendChild(colorItem); //appendChild nos permite insertar los colores en la página//
+        
+
+
+        console.log("Paleta recuperada", palettes);
+        
+        
+    })
+}
+
+
+//DEFINIR EVENTO AL DAR CLICK AL BOTON GUARDAR PALETA//
+const copyButton = document.getElementById("copy-btn");
+copyButton.addEventListener("click", function() {
+    
+    savePalette();
+    showSavedPalette();
+})
+
+
+//SECCION DE MENSAJES QUE APARECERÁN EN PANTALLA AL REALIZAR LAS SIGUIENTES ACCIONES POR PARTE DEL USUARIO//
+
 //FUNCIÓN QUE MUESTRA EN PANTALLA UN MENSAJE DEL COLOR COPIADO EN LA PALETA//
 function showCopiedMessage(colorInfo) {
     const message = document.createElement("div");
@@ -170,70 +239,25 @@ function showGeneratedMessage () {
 
     document.body.appendChild(message);
 
+    console.log("Mensaje obtenido: ", message);
+
     setTimeout(function(){
         message.remove();
     }, 2000)
 
 }
 
+//FUNCIÓN QUE MUESTRA EN PANTALLA UN MENSAJE DE CONFIRMACIÓN AL GUARDAR LA PALETA GENERADA//
+function showSavedPaletteMessage() {
+    const message = document.createElement("div");
+    message.classList.add("copied-message");
+    message.textContent = "Paleta guardada 💾";
 
-//FUNCIÓN QUE PERMITE GUARDAR LA PALETA GENERADA USANDO localStorage//
-function savePalette() {
+    document.body.appendChild(message);
 
-    const savedColors = [];//Establecer un array vacío mediante corchetes para dentro agregar la información de la paleta guardada//
-    colorItems.forEach(function(item) {
-        if (item.style.display !== "none") {
-            savedColors.push(item.dataset.hex);
-        }
-    })
+    console.log("Mensaje de confirmación: ", message);
 
-    const format = document.querySelector(`input[name="grupo"]:checked`).value;
-    const palette = {
-        colors: savedColors,
-        format: format
-    }
-
-    localStorage.setItem("PaletaGuardada", JSON.stringify(palette));
-    console.log("Copiar Activo!");
-    console.log(localStorage.getItem("PaletaGuardada"));    
+    setTimeout(function() {
+        message.remove();
+    }, 2000)
 }
-
-
-//FUNCIÓN QUE MUESTRA AL USUARIO LA PALETA GUARDADA EN LOCAL STORAGE//
-function showSavedPalette() {
-    const savedData = localStorage.getItem("PaletaGuardada");//Recuperar la paleta guardada en localStorage//
-
-    if (!savedData) {
-        return;
-    }
-    const palettes = JSON.parse(savedData);  //JSON.parse permite transformar el texto en objetos//
-    palettes.colors.forEach(function(color) { //Acceder a los colores y con el forEach recorrer cada color//
-        const colorItem = document.createElement("div");//Crear elementos HTML desde JavaScript//
-        colorItem.classList.add("saved-color-item");//Asignar una clase CSS al elemento HTML creado desde JavaScript//
-        colorItem.style.backgroundColor = color;//Permite pintar cada color//
-
-        let colorText;
-        if (palettes.format === "HSL") { //Condición que establece si el formato de colores es HSL, se muestra aquel formato sin realizar
-            colorText = hexToHSL(color); //otra conversión; caso contrario devuelve la información en formato HEX
-        } else {
-            colorText = color;
-        }
-        colorItem.textContent = colorText;
-
-        savedPalette.appendChild(colorItem); //appendChild nos permite insertar los colores en la página//
-        
-
-
-        console.log("Paleta recuperada", palettes);
-        
-    })
-}
-
-
-//DEFINIR EVENTO AL DAR CLICK AL BOTON GUARDAR PALETA//
-const copyButton = document.getElementById("copy-btn");
-copyButton.addEventListener("click", function() {
-    
-    savePalette();
-    showSavedPalette();
-})
