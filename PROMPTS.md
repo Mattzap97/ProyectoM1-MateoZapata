@@ -42,6 +42,29 @@ Esto debido a que en HTML se dió la estructura inicial para que el comtenedor d
 
 ## Prompt:  
 
+Quiero saber si hay una manera de refactorizar esa lógica para que no se vea tanto código. Sino más bien que en un solo formatOptions se puedan cumplir ambas funciones.  
+
+<p align="center"><img src="./assets/1787206941905.jpg" alt="prompt para refactorizar" width="23%"></p>  
+
+Esta respuesta ayudó a encontrar una manera de refactorizar la lógica usada en una sola función para evitar que se amontone tanto código que cumplen las mismas funciones dentro del archivo de JavaScript.
+
+## Prompt:  
+
+Cómo evitar que se genere otra paleta de colores al momento de cambiar de formato, ya que lo que busco dentro de la función al momento de cambiar a otro formato los colores se mantengan y puedan brindar al usuario la informacion de los mismos colores.  
+
+
+<p align="center">
+    <img src="./assets/1787206941867.jpg" width="20%" hspace="20" alt="primera captura">
+    <img src="./assets/1787206941840.jpg" width="20%" hspace="20" alt="segunda captura">
+    <img src="./assets/1787206941808.jpg" width="20%" hspace="20" alt="tercera captura">
+    <img src="./assets/1787206941780.jpg" width="20%" hspace="20" alt="cuarta captura">
+</p>  
+
+La respuesta a esta consulta pudo permitir que la paleta de colores sea la misma cuando el usuario pase del formato HEX a HSL y no se genere una nueva paleta aleatoria al momento de cambiar de formato.  
+Esto permite mejor interactividad y que el usuario no pierda los colores generados y pueda obtener la información en ambos formatos.
+
+
+
 
 
 
